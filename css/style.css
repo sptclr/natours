@@ -12,19 +12,33 @@ Dark green: #28b485
     use text-align properties to moved some text;
 */
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit; /*inherit from body, cause body has majority element than universal '*' */
+}
+
+html {
+    font-size: 62.5%; /*root element for declared rem; 1rem = root element declare*/
+    /*change pixel into percentage %
+      default browser font-size = 16px;
+      our project is 10px;
+      (10px/16px) * 100% = 62.5% 
+
+    */
 }
 
 body{
     font-family: "lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    /* font-size: 1.6rem; */
     line-height: 1.7;
     color: #777;
-    padding: 30px;
+    padding: 3rem;
+
+    box-sizing: border-box;
 }
 
 .header{
@@ -39,24 +53,24 @@ body{
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%)
 }
 
-.logo-box{
+.header__logo-box{
     position: absolute; /*is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).*/
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 
-.logo{
-    height: 35px;
+.header__logo{
+    height: 3.5rem;
 }
 
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
-    margin-bottom: 60px;
+    margin-bottom: 6rem;
     backface-visibility: hidden;
 }
 
-.text-box{
+.header__text-box{
     position: absolute; /*to move & reach position from parent element*/
     top: 40%;
     left: 50%;
@@ -64,22 +78,22 @@ body{
     transform: translate(-50%, -50%); /*from current position to moving element based on parent element */
 }
 
-.heading-primary-main{
+.heading-primary--main{
     display: block; /*cause we need the other element goes down, text by default is inline or capture all spaces*/
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
     font-weight: 400;
-    font-size: 60px;
+    font-size: 6rem;
     
     animation-name: mainLeftIn;
     animation-timing-function: ease-out;
     animation-duration: 2s;
 }
 
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
-    letter-spacing: 15px;
+    letter-spacing: 1.3rem;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 2rem;
 
     animation: subRightIn ease-out 2s;
 }
@@ -87,10 +101,10 @@ body{
 @keyframes mainLeftIn {
     0%{
         opacity: 0;
-        transform: translateX(-100px)
+        transform: translateX(-10rem)
     }
     80%{
-        transform: translateX(20px)
+        transform: translateX(2rem)
     }
     100%{
         opacity: 1;
@@ -101,11 +115,11 @@ body{
 @keyframes subRightIn{
     0%{
         opacity: 1;
-        transform: translateX(100px);
+        transform: translateX(10rem);
     }
 
     80%{
-        transform: translateX(-20px);
+        transform: translateX(-2rem);
     }
 
     100%{
@@ -117,7 +131,7 @@ body{
 @keyframes buttonMoveIn{
     0%{
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(3rem);
     }
 
     100%{
@@ -130,25 +144,26 @@ body{
 .btn:visited{
     text-decoration: none;
     text-transform: uppercase;
-    padding:15px 40px;
+    padding:1.5rem 4rem;
     display: inline-block; /*Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values*/
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s; /* allows you to change property values smoothly (from one value to another), over a given duration. */
     /* there is a lot of properties between class btn, there are transform and box shadow so better used transition  */
     position: relative; /*parent position*/
+    font-size: 1.6rem;
 }
 
 .btn:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    transform: translateY(-.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
 }
 
 .btn:active{
-    transform: translateY(-1px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    transform: translateY(-.1rem);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2);
 }
 
-.btn-white{
+.btn--white{
     color: #777;
     background-color: #fff;
 }
@@ -158,7 +173,7 @@ body{
     display: inline-block;
     height: 100%;
     width: 100%;
-    border-radius: 100px;
+    border-radius: 10rem;
     position: absolute; /*key of z-index*/
     top: 0;
     left: 0;
@@ -167,7 +182,7 @@ body{
     transition: all .4s;
 }
 
-.btn-white::after{
+.btn--white::after{
     background-color: whitesmoke;
 }
 
@@ -176,7 +191,7 @@ body{
     opacity: 0;
 }
 
-.btn-animated {
+.btn--animated {
     animation: buttonMoveIn .6s ease-out .75s;
     animation-fill-mode: backwards;
 }

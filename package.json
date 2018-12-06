@@ -1,0 +1,27 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Learning CSS and SASS",
+  "main": "index.js",
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sptclr/natours.git"
+  },
+  "keywords": [
+    "css",
+    "sass"
+  ],
+  "author": "fajar muhamad",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sptclr/natours/issues"
+  },
+  "homepage": "https://github.com/sptclr/natours#readme"
+}
