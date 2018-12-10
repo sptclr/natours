@@ -1,0 +1,33 @@
+.header{
+    height: 95vh;/*vh : 1% of viewport*/
+    background-image: 
+        linear-gradient(to right bottom,rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
+        url(../img/hero.jpg);
+    background-size: cover; /*fulfill the image like cover*/
+    background-position: top; /*cause position img fixed at top*/
+    position: relative;
+
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    // & in sass is refer to current class where located
+    // in this case & refer to .header
+    &__logo-box{
+        position: absolute; /*is positioned relative to the nearest positioned ancestor (instead of positioned relative to the viewport, like fixed).*/
+        top: 4rem;
+        left: 4rem;     
+    }
+    
+    &__logo{
+        height: 3.5rem;
+    }
+
+
+    &__text-box{
+        position: absolute; /*to move & reach position from parent element*/
+        top: 40%;
+        left: 50%;
+        text-align: center;
+        transform: translate(-50%, -50%); /*from current position to moving element based on parent element */
+    }
+
+}

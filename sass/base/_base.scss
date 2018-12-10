@@ -1,0 +1,27 @@
+/* 
+    use position properties to moved element;
+    use text-align properties to moved some text;
+*/
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit; /*inherit from body, cause body has majority element than universal '*' */
+}
+
+html {
+    // this define what 1rem is
+    font-size: 62.5%; /*root element for declared rem; 1rem = root element declare*/
+    /*change pixel into percentage %
+      default browser font-size = 16px;
+      our project is 10px;
+      (10px/16px) * 100% = 62.5% 
+
+    */
+}
+
+body{
+    box-sizing: border-box;
+}

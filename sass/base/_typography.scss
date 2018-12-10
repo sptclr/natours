@@ -1,0 +1,35 @@
+body{
+    font-family: "lato", sans-serif;
+    font-weight: 400;
+    /* font-size: 1.6rem; */
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
+
+.heading-primary{
+    color: $color-white;
+    text-transform: uppercase;
+    margin-bottom: 6rem;
+    backface-visibility: hidden;
+
+    &--main{
+        display: block; /*cause we need the other element goes down, text by default is inline or capture all spaces*/
+        letter-spacing: 3.5rem;
+        font-weight: 400;
+        font-size: 6rem;
+        
+        animation-name: mainLeftIn;
+        animation-timing-function: ease-out;
+        animation-duration: 2s;
+    }
+    
+    &--sub{
+        display: block;
+        letter-spacing: 1.3rem;
+        font-weight: 700;
+        font-size: 2rem;
+    
+        animation: subRightIn ease-out 2s;
+    }
+}
