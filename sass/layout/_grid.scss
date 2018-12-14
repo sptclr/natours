@@ -1,8 +1,7 @@
 .row{
     max-width: $grid-width;
-    background-color: aqua;
     margin: 0 auto;
-    color: $color-white;
+    color: $color-grey-dark; 
     
     &:not(:last-child){
         margin-bottom: $gutter-vertical
@@ -12,7 +11,6 @@
 
     //selector to specify the classes called, no repeating the same classes
     [class^="col-"]{
-        background-color: #bcbdbd;
         float: left;
         &:not(:last-child){ // all element got margin right except last child
             margin-right: $gutter-horizontal;
