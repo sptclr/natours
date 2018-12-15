@@ -38,6 +38,7 @@ body{
     text-transform: uppercase;
     font-weight: 700;
     font-size: 3.5rem; 
+    display: inline-block;
     background-image: linear-gradient(to Right, $color-primary-light, $color-primary-dark);
     -webkit-background-clip: text;
     color: transparent;
@@ -49,7 +50,7 @@ body{
     }
 }
 
-.heading-tertiary{
+.heading-tertiary{ 
     text-transform: uppercase;
     font-size: $default-font-size;
     font-weight: 700; 

@@ -6,7 +6,7 @@
     background-size: cover; /*fulfill the image like cover*/
     background-position: top; /*cause position img fixed at top*/
     position: relative;
-
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     // & in sass is refer to current class where located
